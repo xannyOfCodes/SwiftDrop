@@ -23,12 +23,12 @@ const FooterCard: React.FC<Props> = ({
             <p className='text-lg font-semibold text-orange-600'>
             {item.Top_Level}
             </p>
-            <span className='md:hidden'>{secondLevelIsOpen ? <ChevronUp className='inline' size={25}/> : <ChevronDown className='inline' size={25}/>}</span>
+            <span className='md:hidden'>{secondLevelIsOpen === item.id ? <ChevronUp className='inline' size={25}/> : <ChevronDown className='inline' size={25}/>}</span>
         </div>
 
         {/* sEcond Level */}
         <div>
-            { (isLargeScreen ||secondLevelIsOpen === item.id) &&
+            { (isLargeScreen || secondLevelIsOpen === item.id) &&
                 item.second_Level.map((secondLvlItems: any) => (
                     <p key={secondLvlItems.id}
                     className='text-base text-zinc-500 p-1'>
